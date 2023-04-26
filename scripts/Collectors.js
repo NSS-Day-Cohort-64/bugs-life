@@ -4,21 +4,23 @@ import { getCollectorsObjects } from "./database.js";
 // declare a variable the invokes the function we imported
 const collectorArray = getCollectorsObjects()
 
+document.addEventListener("click", (clickEventObject) => {
+    if (clickEventObject.target.dataset.hasOwnProperty("bug")) {
+        window.alert(`The favorite bug of that collector is ${clickEventObject.target.dataset.bug}`)
+    }
+})
+
 // define a function that will create the HTML sting of collectors
 export const CollectorHTMLList = () => {
-   // - Build an empty HTML string
+
     let HTMLString = `<h2>Collector List</h2>
     <ul>`
-    // iterate array of collectors
+
     for (const collector of collectorArray){
-        // - add the collector to HTML string
-            // display a list of all collectors
-            // display the name
-        HTMLString += `<li>${collector.name}</li>`
+        HTMLString += `<li data-bug="${collector.favoriteBug}">${collector.name}</li>`
     }
-   // - close our HTML string
+
     HTMLString += `</ul>`
 
-    // - return HTML sting that has been modified
     return HTMLString
 }
