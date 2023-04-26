@@ -5,7 +5,7 @@ import { getTerrariumsObjects } from "./database.js";
 const terrariumArray = getTerrariumsObjects()
 
 // define a function that will create the HTML sting of terrariums
-export const TerrariumHtmlList = () => {
+export const TerrariumHTMLList = () => {
    // - Build an empty HTML string
     let htmlString = `<h2>Terrarium List</h2>
     <ul>`
