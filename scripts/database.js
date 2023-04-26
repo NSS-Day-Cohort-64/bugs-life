@@ -320,3 +320,7 @@ export const getBugObjects = () => {
 export const getTerrariumsObjects = () => {
     return structuredClone(database.terrariums)
 }
+// Export the collector data
+export const getCollectorsObjects = () => {
+    return structuredClone(database.collector)
+}
